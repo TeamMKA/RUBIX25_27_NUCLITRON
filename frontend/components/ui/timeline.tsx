@@ -33,15 +33,17 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     target: containerRef,
     offset: ["start 10%", "end 50%"],
   })
-
+ const handleclick = () => {
+  alert("You clicked me!");
+ }
   // Transformations for height and opacity based on scroll progress
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height / data.length])
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1])
 
   return (
-    <div className="relative w-full bg-gradient-to-b from-black via-gray-900 to-black text-yellow-300 font-serif" ref={containerRef}>
-      <div className="max-w-4xl mx-auto py-16 px-4">
-        <h2 className="text-3xl md:text-5xl mb-6 text-yellow-300 border-b border-yellow-500 pb-4">
+    <div className="relative w-full bg-gradient-to-b from-black via-gray-900 to-black text-yellow-300 font-serif" ref={containerRef} onClick={handleclick}>
+      <div className="max-w-7xl  mx-auto py-16 px-4">
+        <h2 className="text-3xl md:text-5xl mb-6  text-yellow-300 border-b  pb-4">
           Chronicles of History
         </h2>
         <p className="text-yellow-200 text-sm md:text-lg max-w-2xl leading-relaxed">
@@ -57,7 +59,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-28 self-start max-w-xs lg:max-w-[40%] md:w-[30%]">
               <div className="relative flex flex-col items-center">
                 <div className="h-12 w-12 rounded-full bg-yellow-400 flex items-center justify-center shadow-[0_0_20px_rgba(255,223,0,0.7)]">
-                  <div className="h-6 w-6 rounded-full bg-black border-2 border-yellow-400 animate-pulse" />
+                  <div className="h-6 w-6 rounded-full bg-black-100 border-2 border-yellow-400 animate-pulse" />
                 </div>
 
                 {/* Decorative timeline line with scroll animation */}
@@ -79,7 +81,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
             {/* Content section with larger text and additional padding */}
             <CardContainer className="inter-var">
-      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black-100 dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
         <CardItem
           translateZ="50"
           className="text-xl font-bold text-neutral-600 dark:text-white"
