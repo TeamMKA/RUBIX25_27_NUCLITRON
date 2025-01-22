@@ -1,5 +1,6 @@
 import React from "react";
 import MeteorCard from "./MeteorCard";
+import { GridGlobe } from "./ui/GridGlobe";
 const goals = [
   {
     title: "Explore History Like Never Before",
@@ -41,7 +42,10 @@ const MeteorGrid = () => {
         ))}
       </div>
 
-      
+        <div className="w-full h-full flex  items-center mt-16">
+            <GridGlobe />
+        </div>
+
     </div>
   );
 };
