@@ -4,8 +4,6 @@ import { EventTile } from './EventTile';
 import { Line } from './Line';
 import { GameStats } from './GameStats';
 import eventData from '../data/events.json';
-import { Timer } from 'lucide-react';
-
 interface HistoricalEvent {
     id: number;
     title: string;
