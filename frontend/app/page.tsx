@@ -1,6 +1,7 @@
 /* import Image from "next/image"; */
 import HeroSection from "@/components/HeroSection";
 import MeteorGrid from "@/components/MeteorGrid";
+import QuoteCard from "@/components/QuoteCard";
 import React from "react";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
     <main className="relative bg-black-100 flex justify-center items-center flex-col mx-auto  overflow-clip">
       <HeroSection />
       <MeteorGrid />
+      <QuoteCard />
     </main>
   );
 }
