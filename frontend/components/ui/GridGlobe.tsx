@@ -8,6 +8,11 @@ const World = dynamic(() => import("../ui/Globe").then((m) => m.World), {
 });
 
 export function GridGlobe() {
+
+  const handleClick = () => {
+   alert("Clicked on the Globe");
+  };
+
   const globeConfig = {
     pointSize: 4,
     globeColor: "#062056",
@@ -422,7 +427,7 @@ export function GridGlobe() {
           </p>
         </motion.div>
         <div className="absolute w-full mt-[2rem] bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent  z-40" />
-        <div className="absolute w-full -bottom-20  h-72 md:h-full z-10">
+        <div className="absolute w-full -bottom-20  h-72 md:h-full z-10" onClick={handleClick} >
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       </div>
