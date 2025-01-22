@@ -2,6 +2,7 @@
 import HeroSection from "@/components/HeroSection";
 import MeteorGrid from "@/components/MeteorGrid";
 import QuoteCard from "@/components/QuoteCard";
+import Footer from "@/components/Footer";
 import React from "react";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <MeteorGrid />
       <QuoteCard />
+      <Footer />
     </main>
   );
 }
