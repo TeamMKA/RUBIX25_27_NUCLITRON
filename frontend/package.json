@@ -9,10 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.1.1",
+    "@radix-ui/react-radio-group": "^1.2.2",
+    "@radix-ui/react-slot": "^1.1.1",
     "@react-three/drei": "^9.120.8",
     "@react-three/fiber": "^8.17.12",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
+    "firebase": "^11.2.0",
     "framer-motion": "^12.0.1",
     "lucide-react": "^0.473.0",
     "mini-svg-data-uri": "^1.4.4",
