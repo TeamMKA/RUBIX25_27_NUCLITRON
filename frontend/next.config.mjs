@@ -4,9 +4,14 @@ const nextConfig = {
         domains: [
             'images.unsplash.com',
             'aceternity.com',
+            'img.etimg.com',
             'i.pinimg.com',
             'upload.wikimedia.org',
             'images.squarespace-cdn.com',
+            'media.licdn.com',
+            'wisdomshort.com',
+            'framerusercontent.com',
+            'res.cloudinary.com',
         ],
     },
     typescript: {
