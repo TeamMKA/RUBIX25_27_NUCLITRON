@@ -103,7 +103,7 @@ export default function QuizPage() {
     if (showResults) {
         return (
             <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-8">
-                <Card className="max-w-2xl mx-auto">
+                <Card className="max-w-2xl mx-auto mt-[10rem]">
                     <CardHeader>
                         <CardTitle className="text-center flex items-center justify-center gap-2">
                             <Trophy className="h-8 w-8 text-yellow-500" />
@@ -140,9 +140,8 @@ export default function QuizPage() {
     }
 
     return (
-        
         <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-8">
-            <Card className="max-w-2xl mx-auto">
+            <Card className="max-w-2xl mx-auto mt-[10rem]">
                 <CardHeader>
                     <CardTitle>
                         Question {currentQuestion + 1} of{' '}

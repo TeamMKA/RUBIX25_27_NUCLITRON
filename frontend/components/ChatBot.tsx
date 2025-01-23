@@ -1,9 +1,8 @@
 'use client';
 
-import type React from 'react';
 import { useState, useEffect, useRef, type FormEvent } from 'react';
 import { HfInference } from '@huggingface/inference';
-import { ChevronDown, Send, Loader2 } from 'lucide-react';
+import { ChevronDown, Send, Loader2, Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -41,6 +40,7 @@ const ChatBot: React.FC<{ historians: Historian[] }> = ({ historians }) => {
     ]);
     const [input, setInput] = useState('');
     const [isStreaming, setIsStreaming] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const scrollAreaRef = useRef<HTMLDivElement>(null);
 
@@ -150,137 +150,165 @@ const ChatBot: React.FC<{ historians: Historian[] }> = ({ historians }) => {
     };
 
     return (
-        <div className="flex flex-col h-[600px] w-full max-w-2xl mx-auto bg-background shadow-2xl rounded-2xl overflow-hidden border">
-            {/* Historian Selector */}
-            <div className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white p-4">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                        <Avatar className="w-12 h-12 border-2 border-white/50 shadow-lg">
-                            <AvatarImage
-                                src={selectedHistorian.avatar}
-                                alt={selectedHistorian.name}
-                            />
-                            <AvatarFallback>
-                                {selectedHistorian.name[0]}
-                            </AvatarFallback>
-                        </Avatar>
-                        <div className="flex flex-col">
-                            <span className="font-bold text-lg tracking-tight">
-                                {selectedHistorian.name}
-                            </span>
-                            <span className="text-xs text-white/80">
-                                Great Figure
-                            </span>
-                        </div>
-                    </div>
-
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button
-                                variant="ghost"
-                                size="icon"
-                                className="text-white hover:bg-white/20"
-                            >
-                                <ChevronDown className="h-4 w-4" />
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                            {historians
-                                .filter((h) => h.id !== selectedHistorian.id)
-                                .map((historian) => (
-                                    <DropdownMenuItem
-                                        key={historian.id}
-                                        onSelect={() =>
-                                            setSelectedHistorian(historian)
-                                        }
-                                    >
-                                        <Avatar className="w-8 h-8 mr-2">
-                                            <AvatarImage
-                                                src={historian.avatar}
-                                                alt={historian.name}
-                                            />
-                                            <AvatarFallback>
-                                                {historian.name[0]}
-                                            </AvatarFallback>
-                                        </Avatar>
-                                        {historian.name}
-                                    </DropdownMenuItem>
-                                ))}
-                        </DropdownMenuContent>
-                    </DropdownMenu>
+        <div className="flex h-screen w-full bg-background">
+            {/* Sidebar */}
+            <div
+                className={cn(
+                    'fixed inset-y-0 left-0 z-50 w-64 bg-gray-900 text-white transform transition-transform duration-300 ease-in-out',
+                    isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+                )}
+            >
+                <div className="p-4">
+                    <h2 className="text-xl font-bold mb-4">Chat History</h2>
+                    {/* Add chat history items here */}
                 </div>
             </div>
 
-            {/* Chat Messages Area */}
-            <ScrollArea className="flex-grow" ref={scrollAreaRef}>
-                <div className="p-6 space-y-6">
-                    {messages
-                        .filter((message) => message.role !== 'system')
-                        .map((message, index) => (
-                            <div
-                                key={index}
-                                className={cn(
-                                    'flex items-start space-x-3',
-                                    message.role === 'user'
-                                        ? 'justify-end'
-                                        : 'justify-start'
-                                )}
-                            >
-                                {message.role === 'assistant' && (
-                                    <Avatar className="w-8 h-8 mt-1">
-                                        <AvatarImage
-                                            src={selectedHistorian.avatar}
-                                            alt={selectedHistorian.name}
-                                        />
-                                        <AvatarFallback>
-                                            {selectedHistorian.name[0]}
-                                        </AvatarFallback>
-                                    </Avatar>
-                                )}
-                                <div
-                                    className={cn(
-                                        'p-4 rounded-2xl shadow-sm',
-                                        message.role === 'user'
-                                            ? 'bg-primary text-primary-foreground rounded-br-none ml-12'
-                                            : 'bg-muted text-muted-foreground rounded-bl-none mr-12'
-                                    )}
-                                    style={{ maxWidth: 'calc(100% - 4rem)' }}
-                                >
-                                    <p className="text-sm leading-relaxed break-words">
-                                        {message.content}
-                                    </p>
-                                </div>
+            {/* Main Content */}
+            <div className="flex-1 flex flex-col">
+                {/* Header */}
+                <div className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white p-4">
+                    <div className="flex items-center justify-between">
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            className="text-white hover:bg-white/20 md:hidden"
+                            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                        >
+                            <Menu className="h-6 w-6" />
+                        </Button>
+                        <div className="flex items-center space-x-4">
+                            <Avatar className="w-12 h-12 border-2 border-white/50 shadow-lg">
+                                <AvatarImage
+                                    src={selectedHistorian.avatar}
+                                    alt={selectedHistorian.name}
+                                />
+                                <AvatarFallback>
+                                    {selectedHistorian.name[0]}
+                                </AvatarFallback>
+                            </Avatar>
+                            <div className="flex flex-col">
+                                <span className="font-bold text-lg tracking-tight">
+                                    {selectedHistorian.name}
+                                </span>
+                                <span className="text-xs text-white/80">
+                                    Great Figure
+                                </span>
                             </div>
-                        ))}
-                    <div ref={messagesEndRef} />
-                </div>
-            </ScrollArea>
+                        </div>
 
-            {/* Input Area */}
-            <div className="border-t p-4">
-                <form
-                    onSubmit={handleSubmit}
-                    className="flex items-center space-x-2"
-                >
-                    <Input
-                        type="text"
-                        value={input}
-                        onChange={(e) => setInput(e.target.value)}
-                        placeholder={`Message ${selectedHistorian.name}...`}
-                        disabled={isStreaming}
-                        className="flex-grow"
-                    />
-                    <Button
-                        type="submit"
-                        disabled={isStreaming || !input.trim()}
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button
+                                    variant="ghost"
+                                    size="icon"
+                                    className="text-white hover:bg-white/20"
+                                >
+                                    <ChevronDown className="h-4 w-4" />
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                                {historians
+                                    .filter(
+                                        (h) => h.id !== selectedHistorian.id
+                                    )
+                                    .map((historian) => (
+                                        <DropdownMenuItem
+                                            key={historian.id}
+                                            onSelect={() =>
+                                                setSelectedHistorian(historian)
+                                            }
+                                        >
+                                            <Avatar className="w-8 h-8 mr-2">
+                                                <AvatarImage
+                                                    src={historian.avatar}
+                                                    alt={historian.name}
+                                                />
+                                                <AvatarFallback>
+                                                    {historian.name[0]}
+                                                </AvatarFallback>
+                                            </Avatar>
+                                            {historian.name}
+                                        </DropdownMenuItem>
+                                    ))}
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </div>
+                </div>
+
+                {/* Chat Messages Area */}
+                <ScrollArea className="flex-grow" ref={scrollAreaRef}>
+                    <div className="p-6 space-y-6">
+                        {messages
+                            .filter((message) => message.role !== 'system')
+                            .map((message, index) => (
+                                <div
+                                    key={index}
+                                    className={cn(
+                                        'flex items-start space-x-3',
+                                        message.role === 'user'
+                                            ? 'justify-end'
+                                            : 'justify-start'
+                                    )}
+                                >
+                                    {message.role === 'assistant' && (
+                                        <Avatar className="w-8 h-8 mt-1">
+                                            <AvatarImage
+                                                src={selectedHistorian.avatar}
+                                                alt={selectedHistorian.name}
+                                            />
+                                            <AvatarFallback>
+                                                {selectedHistorian.name[0]}
+                                            </AvatarFallback>
+                                        </Avatar>
+                                    )}
+                                    <div
+                                        className={cn(
+                                            'p-4 rounded-2xl shadow-sm',
+                                            message.role === 'user'
+                                                ? 'bg-primary text-primary-foreground rounded-br-none ml-12'
+                                                : 'bg-muted text-muted-foreground rounded-bl-none mr-12'
+                                        )}
+                                        style={{
+                                            maxWidth: 'calc(100% - 4rem)',
+                                        }}
+                                    >
+                                        <p className="text-sm leading-relaxed break-words">
+                                            {message.content}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        <div ref={messagesEndRef} />
+                    </div>
+                </ScrollArea>
+
+                {/* Input Area */}
+                <div className="border-t p-4">
+                    <form
+                        onSubmit={handleSubmit}
+                        className="flex items-center space-x-2"
                     >
-                        {isStreaming ? (
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                        ) : (
-                            <Send className="w-4 h-4" />
-                        )}
-                    </Button>
-                </form>
+                        <Input
+                            type="text"
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
+                            placeholder={`Message ${selectedHistorian.name}...`}
+                            disabled={isStreaming}
+                            className="flex-grow"
+                        />
+                        <Button
+                            type="submit"
+                            disabled={isStreaming || !input.trim()}
+                        >
+                            {isStreaming ? (
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                            ) : (
+                                <Send className="w-4 h-4" />
+                            )}
+                        </Button>
+                    </form>
+                </div>
             </div>
         </div>
     );

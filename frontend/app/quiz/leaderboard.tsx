@@ -67,7 +67,7 @@ export default function Leaderboard() {
                     ) : (
                         <table className="w-full border-collapse border border-gray-200">
                             <thead>
-                                <tr className="bg-gray-100">
+                                <tr className="bg-gray-100 text-black">
                                     <th className="border px-4 py-2 text-left">
                                         Rank
                                     </th>

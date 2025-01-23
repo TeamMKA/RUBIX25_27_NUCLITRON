@@ -1,7 +1,12 @@
 import React from 'react';
 import { Clock, Calendar } from 'lucide-react';
-import { HistoricalEvent } from '../types';
-
+export interface HistoricalEvent {
+    id: number;
+    title: string;
+    description: string;
+    year: number;
+    imageUrl: string;
+}
 interface EventTileProps {
     event: HistoricalEvent;
     isDragging: boolean;
