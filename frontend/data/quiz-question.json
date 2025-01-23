@@ -1,0 +1,27 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "What is the capital of France?",
+            "options": ["London", "Berlin", "Paris", "Madrid"],
+            "correctAnswer": "Paris"
+        },
+        {
+            "id": 2,
+            "question": "Which planet is known as the Red Planet?",
+            "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+            "correctAnswer": "Mars"
+        },
+        {
+            "id": 3,
+            "question": "Who painted the Mona Lisa?",
+            "options": [
+                "Vincent van Gogh",
+                "Leonardo da Vinci",
+                "Pablo Picasso",
+                "Michelangelo"
+            ],
+            "correctAnswer": "Leonardo da Vinci"
+        }
+    ]
+}
