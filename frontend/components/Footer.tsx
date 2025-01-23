@@ -34,7 +34,7 @@ const people = [
 
 export default function Footer() {
   return (
-    <div className="flex flex-row items-center justify-center mb-10 w-full">
+    <div className="flex flex-row items-center justify-center mb-10 w-full" id="footer">
       <AnimatedTooltip items={people} />
     </div>
   );

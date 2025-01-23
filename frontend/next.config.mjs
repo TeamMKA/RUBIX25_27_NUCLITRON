@@ -8,6 +8,7 @@ const nextConfig = {
             'upload.wikimedia.org',
             'images.squarespace-cdn.com',
             'media.licdn.com',
+            'assets.aceternity.com',
         ],
     },
     typescript: {
