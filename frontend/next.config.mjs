@@ -7,6 +7,7 @@ const nextConfig = {
             'i.pinimg.com',
             'upload.wikimedia.org',
             'images.squarespace-cdn.com',
+            'media.licdn.com',
         ],
     },
     typescript: {
