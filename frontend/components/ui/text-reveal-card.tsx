@@ -97,7 +97,7 @@ export const TextRevealCard = ({
               marginBottom: "2.5rem", // Add margin to increase space
               lineHeight: "2.5rem",
             }}
-            className="text-base sm:text-[3rem] h-full py-10 leading-5 font-bold text-yellow-600 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300"
+            className="text-base sm:text-[3rem] h-full py-10 leading-5 font-bold text-transparent bg-clip-text  bg-gradient-to-b from-white to-neutral-300"
           >
             {revealText}
           </p>
@@ -114,7 +114,7 @@ export const TextRevealCard = ({
 
         <div className=" overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
           <p
-            className="text-base h-full sm:text-[3rem] py-10 font-bold bg-clip-text text-transparent bg-[#323238]"
+            className="text-base h-full sm:text-[3rem] py-10 font-bold bg-clip-text text-yellow-600 bg-[#323238]"
             style={{
               marginBottom: "2.5rem",
               lineHeight: "2.5rem",
