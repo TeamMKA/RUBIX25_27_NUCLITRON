@@ -140,6 +140,7 @@ export default function QuizPage() {
     }
 
     return (
+        
         <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-8">
             <Card className="max-w-2xl mx-auto">
                 <CardHeader>

@@ -111,7 +111,7 @@ export const Header = () => {
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
         Travel through time and explore history like never before! Dive into
-        interactive timelines, 3D maps, and AI-powered historical figures.
+        interactive timelines, historical maps, and AI-powered historical figures.
         Experience the past through immersive storytelling, quizzes, and
         challenges!
       </p>

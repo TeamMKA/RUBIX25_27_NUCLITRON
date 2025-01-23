@@ -12,6 +12,8 @@ const nextConfig = {
             'wisdomshort.com',
             'framerusercontent.com',
             'res.cloudinary.com',
+            'media.licdn.com',
+            'assets.aceternity.com',
         ],
     },
     typescript: {

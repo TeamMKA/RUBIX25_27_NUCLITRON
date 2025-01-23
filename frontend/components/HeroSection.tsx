@@ -1,5 +1,6 @@
 import React from 'react'
 import { HeroParallax } from "@/components/ui/hero-parallax";
+import TextToSpeech from './TextToSpeech';
 
 const products = [
     {
@@ -101,6 +102,10 @@ const HeroSection = () => {
   return (
     <section className='h-full w-full lg:max-w-7xl max-w-4xl ' >
         <HeroParallax products={products} />
+        <TextToSpeech text="Travel through time and explore history like never before! Dive into
+        interactive timelines, historical maps, and AI-powered historical figures.
+        Experience the past through immersive storytelling, quizzes, and
+        challenges!" startItself={true}  className="hidden"/>
     </section>
   )
 }

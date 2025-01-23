@@ -1,6 +1,7 @@
 import Chatbot from '@/components/ChatBot';
 import Display from '@/components/Display';
 import HistoryAvatar from '@/components/HistoryAvatar';
+import TextToSpeech from "@/components/TextToSpeech";
 import WhatIfComponent from '@/components/WhatIfComponent';
 import React from 'react';
 import historiansData from '@/data/historiansData.json';
@@ -13,7 +14,8 @@ const Explore = () => {
 
             <WhatIfComponent />
             <HistoryAvatar />
-        </main>
+          <TextToSpeech text="Journey Through Time Explore Key Eras in History" startItself={true} className="hidden" />
+    </main>
     );
 };
 
