@@ -4,13 +4,12 @@
     "location": "India",
     "overview": {
       "title": "Vedic period",
-      "image_credit": "Anonymous",
+      "image_credit": "https://i.pinimg.com/1200x/19/90/f1/1990f1c1132ce472a1ca576e238886ee.jpg",
       "description": "The Vedic period, spanning from approximately 1500 to 500 BCE, marks a transformative era in the history of the Indian subcontinent. It represents the transition from the late Bronze Age to the early Iron Age, bridging the gap between the decline of the urban Indus Valley Civilization and the emergence of a second wave of urbanization around 600 BCE in the central Indo-Gangetic Plain."
     },
     "subsections": [
       {
         "title": "Early Vedic Culture (1700-1100 BCE)",
-        "image_credit": "Avantiputra7",
         "details": "The foundation of this period is defined by the composition of the Vedic texts, including the Vedas, which were created between roughly 1500 and 900 BCE. These liturgical texts were composed by speakers of an Old Indo-Aryan language who migrated into the northwestern regions of the subcontinent. The Vedas are not only religious hymns but also provide insight into the social, political, and cultural aspects of early Vedic society, making them the primary source for understanding this era. Their precise oral transmission ensured the preservation of the traditions and knowledge of this period."
       },
       {
@@ -37,7 +36,7 @@
     "location": "India",
     "overview": {
       "title": "Vaishnavism",
-      "image_credit": "Anonymous",
+      "image_credit": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Vishnu_from_Gita_Govinda.jpg/1200px-Vishnu_from_Gita_Govinda.jpg",
       "description": "Vaishnavism is one of the major Hindu denominations along with Shaivism, Shaktism, and Smartism. According to a 2010 estimate by Johnson and Grim, Vaishnavites are the largest Hindu sect, constituting about 641 million or 67.6% of Hindus. It is also called Vishnuism since it considers Vishnu as the sole supreme being leading all other Hindu deities, i.e. Mahavishnu. Its followers are called Vaishnavites or Vaishnavas, and it includes sub-sects like Krishnaism and Ramaism, which consider Krishna and Rama as the supreme beings respectively."
     },
     "subsections": [
@@ -61,7 +60,7 @@
     "location": "India",
     "overview": {
       "title": "Maurya Empire",
-      "image_credit": "Anonymous",
+      "image_credit": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3bA2pKTWqa7PrQKaL_Ojmpk3oGE0co3RIOw&s",
       "description": "The Maurya Empire was a geographically extensive historical power in ancient India. Founded by Chandragupta Maurya, it is one of the largest empires to have ever existed in the Indian subcontinent. The empire reached its zenith under Ashoka the Great, who embraced Buddhism and spread its teachings far beyond India's borders."
     },
     "subsections": [
@@ -85,7 +84,7 @@
     "location": "India",
     "overview": {
       "title": "Gupta Empire",
-      "image_credit": "Anonymous",
+      "image_credit": "https://i.pinimg.com/1200x/98/82/4c/98824cd3a5712f6079889956e4f11602.jpg",
       "description": "The Gupta Empire, often referred to as the Golden Age of India, was a period of great cultural, scientific, and political achievements. Under the leadership of Gupta rulers like Chandragupta I and his successors, India witnessed a flourishing of arts, literature, mathematics, astronomy, and architecture."
     },
     "subsections": [
@@ -109,7 +108,7 @@
     "location": "India",
     "overview": {
       "title": "Post Gupta Period",
-      "image_credit": "Anonymous",
+      "image_credit": "https://i.pinimg.com/1200x/5a/75/56/5a7556cd2f048abef3ecb80bb0410770.jpg",
       "description": "The period following the Gupta Empire's decline witnessed a fragmentation of India into smaller regional kingdoms. Despite the political instability, this era saw a continuation of cultural, religious, and architectural advancements, as well as the rise of new powers like the Rajputs and Chalukyas."
     },
     "subsections": [
@@ -133,7 +132,7 @@
     "location": "India",
     "overview": {
       "title": "Delhi Sultanate",
-      "image_credit": "Anonymous",
+      "image_credit": "https://i.pinimg.com/1200x/63/4e/e6/634ee64cdd1dda1e1dc2fd175804ddd2.jpg",
       "description": "The Delhi Sultanate was a series of Muslim empires that ruled large parts of the Indian subcontinent from the early 13th century to the early 16th century. It marked the beginning of Islamic rule in India and had a profound influence on the culture, architecture, and society of the region."
     },
     "subsections": [
@@ -157,7 +156,7 @@
     "location": "India",
     "overview": {
       "title": "Mughal Empire",
-      "image_credit": "Anonymous",
+      "image_credit": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Weeks_Edwin_Great_Mogul_And_His_Court_Returning_From_The_Great_Mosque_At_Delhi_India.jpg/1200px-Weeks_Edwin_Great_Mogul_And_His_Court_Returning_From_The_Great_Mosque_At_Delhi_India.jpg",
       "description": "The Mughal Empire was one of the largest and most prosperous empires in Indian history. Founded by Babur in 1526, it saw a remarkable period of political stability, economic prosperity, and cultural flourishing under rulers such as Akbar the Great, Shah Jahan, and Aurangzeb."
     },
     "subsections": [
@@ -181,7 +180,7 @@
     "location": "India",
     "overview": {
       "title": "British Raj",
-      "image_credit": "Anonymous",
+      "image_credit": "https://i.pinimg.com/1200x/9d/d4/aa/9dd4aaf4723c19618b58bdd0e2571524.jpg",
       "description": "The British Raj refers to the period of British rule in India between 1858 and 1947. This period marked a significant transformation in India's political, economic, and social landscape. India was under direct control of the British Crown after the British East India Company's rule ended following the Indian Rebellion of 1857."
     },
     "subsections": [
@@ -205,7 +204,7 @@
     "location": "India",
     "overview": {
       "title": "Independent India",
-      "image_credit": "Anonymous",
+      "image_credit": "https://i.pinimg.com/1200x/a4/04/a5/a404a5ffb1dc037228b10c81047033b0.jpg",
       "description": "Following the end of British rule in 1947, India emerged as a sovereign nation. Since its independence, India has grown to become one of the world's largest democracies and one of the fastest-growing major economies."
     },
     "subsections": [
