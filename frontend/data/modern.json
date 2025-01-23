@@ -1,0 +1,29 @@
+{
+  "ModernPeriod": [
+    {
+      "link": "https://example.com",
+      "title": "Partition of India",
+      "image_src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/A_refugee_special_train_at_Ambala_Station_during_partition_of_India.jpg/1200px-A_refugee_special_train_at_Ambala_Station_during_partition_of_India.jpg"
+    },
+    {
+      "link": "https://example.com",
+      "title": "Assassination of Mahatma Gandhi",
+      "image_src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Trial_of_persons_accused_of_participation_and_complicity_in_Gandhi%27s_assassination_in_the_Special_Court_in_Red_Fort_Delhi.jpg/1200px-Trial_of_persons_accused_of_participation_and_complicity_in_Gandhi%27s_assassination_in_the_Special_Court_in_Red_Fort_Delhi.jpg"
+    },
+    {
+      "link": "example.com",
+      "image_src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/A_Constituent_Assembly_of_India_meeting_in_1950.jpg/1200px-A_Constituent_Assembly_of_India_meeting_in_1950.jpg",
+      "title": "Constitution of India"
+    },
+    {
+      "link": "example.com",
+      "image_src": "https://upload.wikimedia.org/wikipedia/commons/7/77/Pakistani_Army_Position%2C_1965_War_Footage_2.png",
+      "title": "Second India–Pakistan War"
+    },
+        {
+      "link": "example.com",
+      "image_src": "https://i.pinimg.com/1200x/18/89/55/188955b5655cc39608a914ddacb82bb1.jpg",
+      "title": "Smiling Buddha: First Nuclear Test India"
+    }
+  ]
+}
