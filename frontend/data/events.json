@@ -2,38 +2,45 @@
     "events": [
         {
             "id": 1,
-            "title": "First Moon Landing",
-            "description": "Apollo 11 astronauts Neil Armstrong and Buzz Aldrin become the first humans to land on the Moon",
-            "year": 1969,
-            "imageUrl": "https://images.unsplash.com/photo-1541873676-a18131494184?auto=format&fit=crop&q=80"
+            "title": "Vedic Period",
+            "description": "A transformative era in ancient India that laid the foundation for Hindu traditions, including the composition of the Vedas.",
+            "year": "-5000",
+            "imageUrl": "https://notes.saralupsc.com/wp-content/uploads/2024/04/image-120.png"
         },
         {
             "id": 2,
-            "title": "Wright Brothers First Flight",
-            "description": "The Wright brothers make the first controlled, sustained flight of a powered aircraft",
-            "year": 1903,
-            "imageUrl": "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&q=80"
+            "title": "Rise of Vaishnavism",
+            "description": "The development of Vaishnavism, a major Hindu denomination, incorporating regional traditions and the idea of Vishnu as the supreme god.",
+            "year": "-600",
+            "imageUrl": "https://i0.wp.com/www.jiva.org/wp-content/uploads/2016/08/NVHistorical-003.jpg"
         },
         {
             "id": 3,
-            "title": "World Wide Web Created",
-            "description": "Tim Berners-Lee invents the World Wide Web at CERN",
-            "year": 1989,
-            "imageUrl": "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?auto=format&fit=crop&q=80"
+            "title": "Maurya Empire Founded",
+            "description": "Chandragupta Maurya establishes the Maurya Empire, leading to one of the largest empires in Indian history.",
+            "year": "322",
+            "imageUrl": "https://www.cheggindia.com/wp-content/uploads/2024/06/Mauryan-Empire-under-Chandragupta-Maurya-1-865x1024.png.webp"
         },
         {
             "id": 4,
-            "title": "Declaration of Independence",
-            "description": "The United States Declaration of Independence is adopted by the Continental Congress",
-            "year": 1776,
-            "imageUrl": "https://images.unsplash.com/photo-1589553416260-f586c8f1514f?auto=format&fit=crop&q=80"
+            "title": "Golden Age of Gupta Empire",
+            "description": "The Gupta Empire sees a cultural and scientific flourishing, marking the Golden Age of India.",
+            "year": "550",
+            "imageUrl": "https://smarthistory.org/wp-content/uploads/2020/03/ChandraguptaIIOnHorse.jpg"
         },
         {
             "id": 5,
-            "title": "Fall of the Berlin Wall",
-            "description": "The Berlin Wall falls, marking a symbolic end to the Cold War",
-            "year": 1989,
-            "imageUrl": "https://images.unsplash.com/photo-1736849489023-19b4751b47fc?auto=format&fit=crop&q=80"
+            "title": "Mughal Empire Founded",
+            "description": "Babur establishes the Mughal Empire, which grows to be one of the largest and most prosperous in Indian history.",
+            "year": "1526",
+            "imageUrl": "https://ichef.bbci.co.uk/images/ic/1200xn/p0dwp7c6.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Independence and Partition",
+            "description": "India gains independence from British rule in 1947, but is divided into two countries, India and Pakistan, leading to significant challenges.",
+            "year": "1947",
+            "imageUrl": "https://www.financialexpress.com/wp-content/uploads/2024/08/Godrej-2024-08-12T165938.465.png?w=1024"
         }
     ]
 }

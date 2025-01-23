@@ -49,11 +49,13 @@ export default function QuizPage() {
     };
 
     const handleAnswerSubmit = async () => {
-        if (
-            selectedAnswer ===
-            questions.questions[currentQuestion].correctAnswer
-        ) {
-            setScore(score + 1);
+        const currentQuestionData = questions.questions[currentQuestion];
+        let newScore = score;
+
+        // Check if the selected answer is correct
+        if (selectedAnswer === currentQuestionData.correctAnswer) {
+            newScore += 1;
+            setScore(newScore);
         }
 
         if (currentQuestion + 1 < questions.questions.length) {
@@ -67,10 +69,10 @@ export default function QuizPage() {
                     await addDoc(collection(db, 'quizResults'), {
                         name: user.displayName,
                         email: user.email,
-                        score,
+                        score: newScore, // Use the calculated score
                         totalQuestions: questions.questions.length,
                         percentage: Math.round(
-                            (score / questions.questions.length) * 100
+                            (newScore / questions.questions.length) * 100
                         ),
                         timestamp: new Date(),
                     });
@@ -101,7 +103,7 @@ export default function QuizPage() {
     if (showResults) {
         return (
             <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-8">
-                <Card className="max-w-2xl mx-auto">
+                <Card className="max-w-2xl mx-auto mt-[10rem]">
                     <CardHeader>
                         <CardTitle className="text-center flex items-center justify-center gap-2">
                             <Trophy className="h-8 w-8 text-yellow-500" />
@@ -138,9 +140,8 @@ export default function QuizPage() {
     }
 
     return (
-        
         <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-8">
-            <Card className="max-w-2xl mx-auto">
+            <Card className="max-w-2xl mx-auto mt-[10rem]">
                 <CardHeader>
                     <CardTitle>
                         Question {currentQuestion + 1} of{' '}

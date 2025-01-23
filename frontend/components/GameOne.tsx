@@ -35,7 +35,10 @@ function GameOne() {
 
     useEffect(() => {
         // Initialize game
-        const shuffledEvents = [...eventData.events].sort(
+        const shuffledEvents = [...eventData.events].map(event => ({
+            ...event,
+            year: parseInt(event.year, 10)
+        })).sort(
             () => Math.random() - 0.5
         );
         setGameState((prev) => ({
