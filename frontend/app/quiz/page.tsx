@@ -16,6 +16,7 @@ import {
 } from 'firebase/auth';
 import { collection, addDoc } from 'firebase/firestore';
 import Leaderboard from './leaderboard';
+import { useRouter } from 'next/navigation';
 
 export default function QuizPage() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -23,14 +24,24 @@ export default function QuizPage() {
     const [score, setScore] = useState(0);
     const [showResults, setShowResults] = useState(false);
     const [user, setUser] = useState<null | User>(null);
+    const [loading, setLoading] = useState(true); // Loading state
+    const router = useRouter(); // Router for redirecting
 
     // Handle authentication state
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            setLoading(false); // Set loading to false once authentication is checked
         });
         return () => unsubscribe();
     }, []);
+
+    // Redirect to login if the user is not signed in and not loading
+    useEffect(() => {
+        if (!loading && !user) {
+            router.push('/login'); // Redirect to the login page if the user is not logged in
+        }
+    }, [user, loading, router]);
 
     const handleLogin = async () => {
         try {
@@ -185,13 +196,13 @@ export default function QuizPage() {
                             </>
                         )}
                     </Button>
-                    <Button
+                    {/* <Button
                         className="mt-4 w-full"
                         variant="secondary"
                         onClick={handleLogout}
                     >
                         Sign Out
-                    </Button>
+                    </Button> */}
                 </CardContent>
             </Card>
         </div>
