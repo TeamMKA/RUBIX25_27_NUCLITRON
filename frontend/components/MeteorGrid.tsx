@@ -30,9 +30,9 @@ const goals = [
 
 const MeteorGrid = () => {
   return (
-    <div className=" !w-full mx-auto px-4 py-16 bg-white-100 rounded-t-full rounded-b-full" style={{ borderTopLeftRadius: '45% 35px', borderTopRightRadius: '45% 35px',borderBottomLeftRadius: '45% 35px', borderBottomRightRadius: '45% 35px' }} >
-      <h1 className="text-4xl font-bold text-center text-yellow-800 mb-12  ">
-        Our Goals
+    <div className=" !w-full mx-auto px-4 py-16 bg-white-100 rounded-t-full rounded-b-full" style={{ borderTopLeftRadius: '45% 35px', borderTopRightRadius: '45% 35px',borderBottomLeftRadius: '45% 35px', borderBottomRightRadius: '45% 35px' }} id="features">
+      <h1 className="text-4xl font-bold text-center text-yellow-400 mb-12  ">
+        Our Features
       </h1>
       <div className="grid grid-cols-3 gap-6 max-w-7xl mx-auto">
         {goals.map((goal, index) => (

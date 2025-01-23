@@ -111,14 +111,14 @@ export const Header = () => {
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
         Travel through time and explore history like never before! Dive into
-        interactive timelines, 3D maps, and AI-powered historical figures.
+        interactive timelines, historical maps, and AI-powered historical figures.
         Experience the past through immersive storytelling, quizzes, and
         challenges!
       </p>
       <button className="p-[3px] relative w-full max-w-[13rem] mt-8 flex justify-center items-center">
         <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-purple-500 rounded-lg" />
         <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-          Explore <ArrowLeftRight /> 
+         <Link href={"/explore"}> Explore <ArrowLeftRight /> </Link>
         </div>
       </button>
     </div>

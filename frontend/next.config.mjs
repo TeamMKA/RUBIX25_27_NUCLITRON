@@ -12,6 +12,8 @@ const nextConfig = {
             'aaregistry.org',
             'theindosphere.com',
             'images.squarespace-cdn.com',
+            'media.licdn.com',
+            'assets.aceternity.com',
         ],
     },
     typescript: {

@@ -161,7 +161,7 @@ function GameOne() {
                                 Congratulations! 🎉
                             </h2>
                             <p className="text-green-700">
-                                You've completed the timeline with{' '}
+                                You&apos;ve completed the timeline with{' '}
                                 {gameState.correctPlacements} correct
                                 placements!
                             </p>

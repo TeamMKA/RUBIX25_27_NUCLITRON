@@ -8,7 +8,7 @@ const WhatIfComponent = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <div className="max-w-7xl mx-auto px-4">
+    <div className="max-w-7xl mx-auto px-4" id="whatif">
       <h1 className="text-4xl font-bold text-center text-white mb-12">
         What If History Took a Different Path?
       </h1>
