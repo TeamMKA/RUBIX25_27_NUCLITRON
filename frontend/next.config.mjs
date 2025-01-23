@@ -6,6 +6,7 @@ const nextConfig = {
             'aceternity.com',
             'i.pinimg.com',
             'upload.wikimedia.org',
+            'images.squarespace-cdn.com',
         ],
     },
     typescript: {
