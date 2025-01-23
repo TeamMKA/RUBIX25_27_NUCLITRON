@@ -3,7 +3,6 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Config } from "tailwindcss";
-
 import svgToDataUri from "mini-svg-data-uri";
 
 const colors = require("tailwindcss/colors");
@@ -32,18 +31,18 @@ const config = {
     extend: {
       colors: {
         black: {
-          "100": "#000319",
-          "200": "rgba(17, 25, 40, 0.75)",
-          "300": "rgba(255, 255, 255, 0.125)",
+          100: "#000319",
+          200: "rgba(17, 25, 40, 0.75)",
+          300: "rgba(255, 255, 255, 0.125)",
           DEFAULT: "#000",
         },
         white: {
-          "100": "#BEC1DD",
-          "200": "#C1C2D3",
+          100: "#BEC1DD",
+          200: "#C1C2D3",
           DEFAULT: "#FFF",
         },
         blue: {
-          "100": "#E4ECFF",
+          100: "#E4ECFF",
         },
         purple: "#CBACF9",
         border: "hsl(var(--border))",
@@ -80,11 +79,11 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
         chart: {
-          "1": "hsl(var(--chart-1))",
-          "2": "hsl(var(--chart-2))",
-          "3": "hsl(var(--chart-3))",
-          "4": "hsl(var(--chart-4))",
-          "5": "hsl(var(--chart-5))",
+          1: "hsl(var(--chart-1))",
+          2: "hsl(var(--chart-2))",
+          3: "hsl(var(--chart-3))",
+          4: "hsl(var(--chart-4))",
+          5: "hsl(var(--chart-5))",
         },
       },
       borderRadius: {
@@ -94,85 +93,64 @@ const config = {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
         spotlight: {
-          "0%": {
-            opacity: "0",
-            transform: "translate(-72%, -62%) scale(0.5)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translate(-50%,-40%) scale(1)",
-          },
+          "0%": { opacity: "0", transform: "translate(-72%, -62%) scale(0.5)" },
+          "100%": { opacity: "1", transform: "translate(-50%,-40%) scale(1)" },
         },
         shimmer: {
-          from: {
-            backgroundPosition: "0 0",
-          },
-          to: {
-            backgroundPosition: "-200% 0",
-          },
+          from: { backgroundPosition: "0 0" },
+          to: { backgroundPosition: "-200% 0" },
         },
         moveHorizontal: {
-          "0%": {
-            transform: "translateX(-50%) translateY(-10%)",
-          },
-          "50%": {
-            transform: "translateX(50%) translateY(10%)",
-          },
-          "100%": {
-            transform: "translateX(-50%) translateY(-10%)",
-          },
+          "0%": { transform: "translateX(-50%) translateY(-10%)" },
+          "50%": { transform: "translateX(50%) translateY(10%)" },
+          "100%": { transform: "translateX(-50%) translateY(-10%)" },
         },
         moveInCircle: {
-          "0%": {
-            transform: "rotate(0deg)",
-          },
-          "50%": {
-            transform: "rotate(180deg)",
-          },
-          "100%": {
-            transform: "rotate(360deg)",
-          },
+          "0%": { transform: "rotate(0deg)" },
+          "50%": { transform: "rotate(180deg)" },
+          "100%": { transform: "rotate(360deg)" },
         },
         moveVertical: {
-          "0%": {
-            transform: "translateY(-50%)",
-          },
-          "50%": {
-            transform: "translateY(50%)",
-          },
-          "100%": {
-            transform: "translateY(-50%)",
-          },
+          "0%": { transform: "translateY(-50%)" },
+          "50%": { transform: "translateY(50%)" },
+          "100%": { transform: "translateY(-50%)" },
         },
         scroll: {
-          to: {
-            transform: "translate(calc(-50% - 0.5rem))",
-          },
+          to: { transform: "translate(calc(-50% - 0.5rem))" },
         },
         meteor: {
           "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
           "70%": { opacity: "1" },
-          "100%": {
-            transform: "rotate(215deg) translateX(-500px)",
-            opacity: "0",
-          },
+          "100%": { transform: "rotate(215deg) translateX(-500px)", opacity: "0" },
         },
+        cloudLeft: {
+          '0%': { transform: 'translateX(-100%)' },
+          '50%': { transform: 'translateX(50vw)' },
+          '100%': { transform: 'translateX(200%)' },
+        },
+        cloudRight: {
+          '0%': { transform: 'translateX(100%)' },
+          '50%': { transform: 'translateX(-50vw)' },
+          '100%': { transform: 'translateX(-200%)' },
+        },
+        cloudTop: {
+          '0%': { transform: 'translateY(-50%)' },
+          '50%': { transform: 'translateY(25%)' },
+          '100%': { transform: 'translateY(-50%)' },
+        },
+        cloudBottom: {
+          '0%': { transform: 'translateY(50%)' },
+          '50%': { transform: 'translateY(-25%)' },
+          '100%': { transform: 'translateY(50%)' },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -184,9 +162,13 @@ const config = {
         third: "moveInCircle 40s linear infinite",
         fourth: "moveHorizontal 40s ease infinite",
         fifth: "moveInCircle 20s ease infinite",
-        scroll:
-          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         "meteor-effect": "meteor 5s linear infinite",
+        'cloud-left': 'cloudLeft 2s cubic-bezier(0.45, 0, 0.55, 1)',
+        'cloud-right': 'cloudRight 2s cubic-bezier(0.45, 0, 0.55, 1)',
+        'cloud-top': 'cloudTop 2s ease-in-out',
+        'cloud-bottom': 'cloudBottom 2s ease-in-out',
+        
       },
     },
   },
