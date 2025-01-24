@@ -19,11 +19,11 @@ export const Line: React.FC<TimelineProps> = ({
             <div className="flex flex-nowrap overflow-x-auto p-4">
                 {/* Initial drop zone */}
                 <div
-                    className="min-w-[100px] flex items-center justify-center"
+                    className="min-w-[150px] flex items-center justify-center"
                     onDragOver={onDragOver}
                     onDrop={(e) => onDrop(e, 0)}
                 >
-                    <div className="w-full h-[200px] border-2 border-dashed border-blue-300 rounded-lg flex items-center justify-center bg-blue-50 hover:bg-blue-100 transition-colors">
+                    <div className="w-full h-[200px] border-2 border-dashed border-blue-300 rounded-lg flex items-center justify-center bg-blue-100 hover:bg-blue-100 transition-colors">
                         <div className="text-center">
                             <MoveHorizontal className="w-8 h-8 text-blue-400 mx-auto mb-2" />
                             <p className="text-blue-600 font-medium text-sm">
@@ -38,7 +38,7 @@ export const Line: React.FC<TimelineProps> = ({
                     <React.Fragment key={event.id}>
                         <div className="relative min-w-[300px] mx-4">
                             {/* Event card */}
-                            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                            <div className="bg-white-200 rounded-lg shadow-md overflow-hidden">
                                 <div className="relative h-[150px]">
                                     <img
                                         src={event.imageUrl}
@@ -59,7 +59,7 @@ export const Line: React.FC<TimelineProps> = ({
 
                         {/* Drop zone after each event */}
                         <div
-                            className="min-w-[100px] flex items-center justify-center"
+                            className="min-w-[150px] flex items-center justify-center"
                             onDragOver={onDragOver}
                             onDrop={(e) => onDrop(e, index + 1)}
                         >

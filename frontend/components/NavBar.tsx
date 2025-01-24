@@ -43,7 +43,7 @@ const NavBar = () => {
                     <div className="flex flex-col space-y-4 text-sm">
                         <HoveredLink href="/explore">Explore</HoveredLink>
                         <HoveredLink href="/timeline">Time Line</HoveredLink>
-                        <HoveredLink href="/maps">Maps</HoveredLink>
+                        <HoveredLink href="/map">Maps</HoveredLink>
                         <HoveredLink href="/explore/#whatif">
                             What If Section
                         </HoveredLink>

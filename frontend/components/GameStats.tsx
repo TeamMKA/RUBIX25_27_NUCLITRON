@@ -21,14 +21,14 @@ export const GameStats: React.FC<GameStatsProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4 flex justify-between items-center">
+    <div className="bg-black-100 border rounded-lg shadow-lg p-4 flex justify-between items-center">
       <div className="flex items-center">
         <Trophy className="w-6 h-6 text-yellow-500 mr-2" />
-        <span className="font-bold text-xl">{score}</span>
+        <span className="font-boldtext-xl">{score}</span>
       </div>
       <div className="flex space-x-6">
         <div className="flex items-center">
-          <div className="w-3 h-3 bg-green-500 rounded-full mr-2" />
+          <div className="w-3 h-3   bg-green-500 rounded-full mr-2" />
           <span>{correctPlacements}</span>
         </div>
         <div className="flex items-center">

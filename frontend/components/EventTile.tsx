@@ -15,7 +15,7 @@ interface EventTileProps {
 export const EventTile: React.FC<EventTileProps> = ({ event, isDragging }) => {
     return (
         <div
-            className={`relative bg-white rounded-lg shadow-lg p-4 cursor-grab active:cursor-grabbing transition-transform ${
+            className={`relative bg-white-100 rounded-lg shadow-lg p-4 cursor-grab active:cursor-grabbing transition-transform ${
                 isDragging ? 'scale-105 shadow-xl' : ''
             }`}
         >

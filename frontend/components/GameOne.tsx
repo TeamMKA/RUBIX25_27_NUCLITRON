@@ -116,9 +116,9 @@ function GameOne() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="min-h-screen mt-20 bg-black-100">
             <div className="max-w-6xl mx-auto p-8">
-                <div className="text-center mb-8">
+                <div className="text-center  mb-8">
                     <h1 className="text-4xl font-bold text-red-600 mb-2">
                         TIMELINES
                     </h1>
@@ -134,7 +134,7 @@ function GameOne() {
                     timeElapsed={gameState.timeElapsed}
                 />
 
-                <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
+                <div className="mt-8 bg-white-100 rounded-lg shadow-lg p-6">
                     <Line
                         events={gameState.placedEvents}
                         onDragOver={handleDragOver}

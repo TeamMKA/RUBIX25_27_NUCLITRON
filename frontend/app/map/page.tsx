@@ -3,7 +3,7 @@ import HistoricalMap from '@/components/MapComponent';
 
 const Home: React.FC = () => {
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto mt-20 p-4">
       <HistoricalMap />
     </div>
   );
