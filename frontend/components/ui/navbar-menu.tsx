@@ -70,7 +70,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-xl border border-transparent dark:bg-black-100 dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+      className="relative rounded-xl gap-10 border border-transparent dark:bg-black-100 dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-6 py-6 "
     >
       {children}
     </nav>

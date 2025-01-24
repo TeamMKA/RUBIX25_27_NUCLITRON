@@ -35,7 +35,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         offset: ['start 10%', 'end 50%'],
     });
     const handleclick = () => {
-        alert('You clicked me!');
+        window.open('https://www.youtube.com/watch?v=eHEv5aF5td8', '_blank');
     };
     // Transformations for height and opacity based on scroll progress
     const heightTransform = useTransform(

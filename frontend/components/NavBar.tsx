@@ -50,6 +50,9 @@ const NavBar = () => {
                         <HoveredLink href="/chat">
                             Chat with Key Figures
                         </HoveredLink>
+                        <HoveredLink href = "/image-gen" >
+                            Historical Image Generator
+                        </HoveredLink>
                     </div>
                 </MenuItem>
                 <MenuItem setActive={setActive} active={active} item="Games">

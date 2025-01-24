@@ -5,7 +5,7 @@ const goals = [
   {
     title: "Explore History Like Never Before",
     description:
-      "Navigate through interactive timelines, maps, and 3D artifacts to experience history firsthand.",
+      "Navigate through interactive timelines, interactive historical maps to experience history firsthand.",
     className: "col-span-2 row-span-1",
   },
   {
