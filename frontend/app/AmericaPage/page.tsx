@@ -7,7 +7,7 @@ import Image from "next/image"
 
 const Page: React.FC = () => {
   return (
-    <div className="flex w-full h-full items-center justify-center bg-black-100">
+    <div className="flex w-full h-full mt-20 items-center justify-center bg-black-100">
       <div className="bg-gradient-to-b max-w-6xl from-gray-900 to-black text-yellow-500 min-h-screen p-8">
         {/* Centered Title */}
         <motion.h1

@@ -29,7 +29,7 @@ const NavBar = () => {
     };
 
     return (
-        <div className={cn('fixed top-10 inset-x-0 max-w-2xl mx-auto z-50')}>
+        <div className={cn('fixed top-1 inset-x-0 max-w-2xl mx-auto z-50')}>
             <Menu setActive={setActive}>
                 <MenuItem setActive={setActive} active={active} item="Home">
                     <div className="flex flex-col space-y-4 text-sm">
@@ -47,7 +47,7 @@ const NavBar = () => {
                         <HoveredLink href="/explore/#whatif">
                             What If Section
                         </HoveredLink>
-                        <HoveredLink href="/explore/#chat">
+                        <HoveredLink href="/chat">
                             Chat with Key Figures
                         </HoveredLink>
                     </div>
