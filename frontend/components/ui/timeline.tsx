@@ -51,11 +51,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             ref={containerRef}
             onClick={handleclick}
         >
-            <div className="max-w-7xl  mx-auto py-16 px-4">
-                <h2 className="text-3xl md:text-5xl mb-6  text-yellow-300 border-b  pb-4">
-                    Chronicles of History
+            <div className="max-w-7xl flex flex-col  mx-auto py-16 px-4">
+                <h2 className="text-5xl text-center md:text-5xl mb-6  text-yellow-300 border-b  pb-4">
+                    Chronicles of Indian History
                 </h2>
-                <p className="text-yellow-200 text-sm md:text-lg max-w-2xl leading-relaxed">
+                <p className="text-yellow-200  text-center bg-black-300 text-2xl md:text-lg max-w-7xl leading-relaxed">
                     Journey through time to witness the transformative moments
                     that shaped our world. This historical timeline blends
                     visual aesthetics with storytelling for an immersive

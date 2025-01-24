@@ -11,11 +11,8 @@ export default function TimelineDemo() {
     return (
         <TextureBackground>
             <div className="w-full bg-opacity-90 text-yellow-300">
-                <Card className="w-full max-w-9xl mx-auto bg-black-100">
+                <Card className="w-full max-w-9xl mt-5 mx-auto bg-black-100">
                     <CardContent className="p-6">
-                        <h2 className="text-2xl md:text-4xl mb-4 text-yellow-300 font-serif">
-                            Historical Timeline
-                        </h2>
                         <Timeline data={timelineData} />
                     </CardContent>
                 </Card>
