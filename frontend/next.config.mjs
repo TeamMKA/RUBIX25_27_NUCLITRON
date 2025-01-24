@@ -28,6 +28,7 @@ const nextConfig = {
             'www.thoughtco.com',
             'www.financialexpress.com',
             'smarthistory.org',
+            'images.unsplash.com',
         ],
     },
     typescript: {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
     Upload,
     Camera,
@@ -10,6 +10,7 @@ import {
     Shield,
     Sword,
     Download,
+    Image as ImageIcon,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -19,6 +20,7 @@ interface HistoricalStyle {
     era: string;
     icon: React.ReactNode;
     description: string;
+    styleImage: string; // Added styleImage property
 }
 
 const historicalStyles: HistoricalStyle[] = [
@@ -29,6 +31,8 @@ const historicalStyles: HistoricalStyle[] = [
         icon: <Crown className="w-6 h-6" />,
         description:
             'Transform into an ancient Egyptian ruler with traditional headdress and royal garments.',
+        styleImage:
+            'https://img.freepik.com/premium-photo/timeless-royalty-egyptian-pharaoh-portrait-depicting-commanding-presence-pharaoh-detailed-artistry-reflecting-their-power-wisdom-rich-history-egyptian-civilization-leadership_771426-75658.jpg', // Add actual image URL
     },
     {
         id: 'knight',
@@ -36,6 +40,8 @@ const historicalStyles: HistoricalStyle[] = [
         era: 'Middle Ages, 5th - 15th century',
         icon: <Shield className="w-6 h-6" />,
         description: 'Don the armor and regalia of a noble medieval knight.',
+        styleImage:
+            'https://d7hftxdivxxvm.cloudfront.net/?height=800&quality=50&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2F88AxpWiDoooO4oSVibaFaA%2Fmain.jpg&width=800', // Add actual image URL
     },
     {
         id: 'viking',
@@ -44,29 +50,144 @@ const historicalStyles: HistoricalStyle[] = [
         icon: <Sword className="w-6 h-6" />,
         description:
             'Become a fierce Norse warrior with traditional Viking attire.',
+        styleImage:
+            'https://cdn.pixabay.com/photo/2023/01/14/17/59/ai-generated-7718746_1280.jpg', // Add actual image URL
     },
 ];
 
 export default function HistoryAvatar() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [selectedStyle, setSelectedStyle] = useState<string | null>(null);
+    const [styleImage, setStyleImage] = useState<string | null>(null);
     const [generatedAvatar, setGeneratedAvatar] = useState<string | null>(null);
     const [isGenerating, setIsGenerating] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const styleInputRef = useRef<HTMLInputElement>(null);
 
-    const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const uploadImageToServer = async (selectedImage: string) => {
+        try {
+            const response = await fetch('/api/upload-image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    image: selectedImage,
+                    filename: 'uploaded-image.jpg',
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Image upload failed');
+            }
+
+            const { url } = await response.json();
+            return url;
+        } catch (error) {
+            console.error('Upload error:', error);
+            throw error;
+        }
+    };
+
+    const handleImageUpload = async (
+        e: React.ChangeEvent<HTMLInputElement>,
+        setImage: React.Dispatch<React.SetStateAction<string | null>>
+    ) => {
         const file = e.target.files?.[0];
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
-                setSelectedImage(reader.result as string);
-                setGeneratedAvatar(null);
-                setError(null);
+                setImage(reader.result as string);
+                if (setImage === setSelectedImage) {
+                    setGeneratedAvatar(null);
+                    setError(null);
+                }
             };
             reader.readAsDataURL(file);
         }
     };
+
+    const generateAvatar = async () => {
+        if (!selectedImage || !selectedStyle) return;
+
+        setIsGenerating(true);
+        setError(null);
+
+        try {
+            // Upload main image
+            const imageUrl = await uploadImageToServer(selectedImage);
+
+            // Use selected style image or default
+            const styleImageUrl = styleImage
+                ? await uploadImageToServer(styleImage)
+                : historicalStyles.find((style) => style.id === selectedStyle)
+                      ?.styleImage || '';
+
+            // Send API request
+            const apiResponse = await fetch('/api/generate-avatar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    imageUrl: imageUrl,
+                    styleImageUrl: styleImageUrl,
+                    textPrompt:
+                        historicalStyles.find(
+                            (style) => style.id === selectedStyle
+                        )?.name || 'Avatar',
+                }),
+            });
+
+            if (!apiResponse.ok) {
+                const errorData = await apiResponse.json();
+                throw new Error(errorData.error || 'Avatar generation failed');
+            }
+
+            const data = await apiResponse.json();
+
+            // Start polling for status
+            await pollOrderStatus(data.body.orderId);
+        } catch (error) {
+            console.error('Error:', error);
+            setError(
+                error instanceof Error
+                    ? error.message
+                    : 'An unknown error occurred'
+            );
+            setIsGenerating(false);
+        }
+    };
+    const LoadingAnimation = () => (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 flex flex-col items-center justify-center bg-black/50"
+        >
+            <motion.div
+                animate={{
+                    scale: [1, 1.2, 1],
+                    rotate: [0, 360],
+                }}
+                transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                }}
+                className="w-24 h-24 rounded-full border-4 border-t-purple-400 border-r-purple-400 border-b-transparent border-l-transparent"
+            />
+            <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-4 text-white text-lg"
+            >
+                Generating your historical avatar...
+            </motion.p>
+        </motion.div>
+    );
+
     const pollOrderStatus = useCallback(
         async (orderId: string, retriesLeft: number = 5) => {
             if (retriesLeft <= 0) {
@@ -92,14 +213,12 @@ export default function HistoryAvatar() {
 
                 switch (statusData.body.status) {
                     case 'init':
-                        // Still processing, wait and retry
                         await new Promise((resolve) =>
                             setTimeout(resolve, 3000)
                         );
                         await pollOrderStatus(orderId, retriesLeft - 1);
                         break;
                     case 'active':
-                        // Success! Set the generated avatar
                         setGeneratedAvatar(statusData.body.output);
                         setIsGenerating(false);
                         break;
@@ -118,49 +237,6 @@ export default function HistoryAvatar() {
         },
         []
     );
-
-    const generateAvatar = async () => {
-        if (!selectedImage || !selectedStyle) return;
-
-        setIsGenerating(true);
-        setError(null);
-
-        try {
-            const response = await fetch('/api/generate-avatar', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    imageUrl:
-                        'https://images.squarespace-cdn.com/content/v1/590beb9b893fc0ef1a3523e3/1658676592432-NRVI5VLXVLV7PRS1VRQM/WG?format=2500w',
-                    styleImageUrl: `https://cdn.pixabay.com/photo/2023/01/14/17/59/ai-generated-7718746_1280.jpg`,
-                    textPrompt:
-                        historicalStyles.find(
-                            (style) => style.id === selectedStyle
-                        )?.name || 'Avatar',
-                }),
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || 'Avatar generation failed');
-            }
-
-            const data = await response.json();
-
-            // Start polling for status
-            await pollOrderStatus(data.body.orderId);
-        } catch (error) {
-            console.error('Error:', error);
-            setError(
-                error instanceof Error
-                    ? error.message
-                    : 'An unknown error occurred'
-            );
-            setIsGenerating(false);
-        }
-    };
 
     const handleDownload = () => {
         if (!generatedAvatar) return;
@@ -189,6 +265,7 @@ export default function HistoryAvatar() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-6">
+                        {/* Main Image Upload */}
                         <div className="relative aspect-square rounded-xl overflow-hidden bg-black/20 border-2 border-dashed border-purple-500/50 hover:border-purple-400 transition-colors">
                             {selectedImage ? (
                                 <img
@@ -213,7 +290,9 @@ export default function HistoryAvatar() {
                                 ref={fileInputRef}
                                 type="file"
                                 accept="image/*"
-                                onChange={handleImageUpload}
+                                onChange={(e) =>
+                                    handleImageUpload(e, setSelectedImage)
+                                }
                                 className="hidden"
                             />
                             {selectedImage && (
@@ -228,6 +307,47 @@ export default function HistoryAvatar() {
                             )}
                         </div>
 
+                        {/* Style Image Upload */}
+                        <div className="relative aspect-square rounded-xl overflow-hidden bg-black/20 border-2 border-dashed border-purple-500/50 hover:border-purple-400 transition-colors">
+                            {styleImage ? (
+                                <img
+                                    src={styleImage}
+                                    alt="Style"
+                                    className="w-full h-full object-cover"
+                                />
+                            ) : (
+                                <button
+                                    onClick={() =>
+                                        styleInputRef.current?.click()
+                                    }
+                                    className="absolute inset-0 flex flex-col items-center justify-center text-purple-300 hover:text-purple-200"
+                                >
+                                    <ImageIcon className="w-12 h-12 mb-2" />
+                                    <span className="text-sm">
+                                        Upload style image (optional)
+                                    </span>
+                                </button>
+                            )}
+                            <input
+                                ref={styleInputRef}
+                                type="file"
+                                accept="image/*"
+                                onChange={(e) =>
+                                    handleImageUpload(e, setStyleImage)
+                                }
+                                className="hidden"
+                            />
+                            {styleImage && (
+                                <button
+                                    onClick={() => setStyleImage(null)}
+                                    className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/70"
+                                >
+                                    <Camera className="w-5 h-5" />
+                                </button>
+                            )}
+                        </div>
+
+                        {/* Historical Styles Selection */}
                         <div className="space-y-4">
                             <h3 className="text-lg font-semibold text-white">
                                 Choose Your Era
@@ -236,9 +356,10 @@ export default function HistoryAvatar() {
                                 {historicalStyles.map((style) => (
                                     <button
                                         key={style.id}
-                                        onClick={() =>
-                                            setSelectedStyle(style.id)
-                                        }
+                                        onClick={() => {
+                                            setSelectedStyle(style.id);
+                                            setStyleImage(style.styleImage); // Set the selected style image
+                                        }}
                                         className={cn(
                                             'flex items-center gap-3 p-4 rounded-lg transition-all',
                                             'hover:bg-white/10',
@@ -264,36 +385,37 @@ export default function HistoryAvatar() {
                         </div>
                     </div>
 
+                    {/* Generated Avatar Display */}
                     <div className="space-y-6">
                         <div className="relative aspect-square rounded-xl overflow-hidden bg-black/20">
-                            {isGenerating ? (
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-400" />
-                                </div>
-                            ) : generatedAvatar ? (
-                                <>
-                                    <img
-                                        src={generatedAvatar}
-                                        alt="Generated Avatar"
-                                        className="w-full h-full object-cover"
-                                    />
-                                    <button
-                                        onClick={handleDownload}
-                                        className="absolute bottom-4 right-4 bg-purple-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-purple-600"
-                                    >
-                                        <Download className="w-4 h-4" />
-                                        Download
-                                    </button>
-                                </>
-                            ) : (
-                                <div className="absolute inset-0 flex items-center justify-center text-purple-300">
-                                    <p className="text-center">
-                                        Your historical avatar
-                                        <br />
-                                        will appear here
-                                    </p>
-                                </div>
-                            )}
+                            <AnimatePresence>
+                                {isGenerating ? (
+                                    <LoadingAnimation />
+                                ) : generatedAvatar ? (
+                                    <>
+                                        <img
+                                            src={generatedAvatar}
+                                            alt="Generated Avatar"
+                                            className="w-full h-full object-cover"
+                                        />
+                                        <button
+                                            onClick={handleDownload}
+                                            className="absolute bottom-4 right-4 bg-purple-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-purple-600"
+                                        >
+                                            <Download className="w-4 h-4" />
+                                            Download
+                                        </button>
+                                    </>
+                                ) : (
+                                    <div className="absolute inset-0 flex items-center justify-center text-purple-300">
+                                        <p className="text-center">
+                                            Your historical avatar
+                                            <br />
+                                            will appear here
+                                        </p>
+                                    </div>
+                                )}
+                            </AnimatePresence>
                         </div>
 
                         {error && (
@@ -302,14 +424,13 @@ export default function HistoryAvatar() {
                             </div>
                         )}
 
-                        {
-                            <button
-                                onClick={generateAvatar}
-                                className="w-full bg-purple-500 text-white py-3 rounded-lg font-medium hover:bg-purple-600 transition-colors"
-                            >
-                                Generate Historical Avatar
-                            </button>
-                        }
+                        <button
+                            onClick={generateAvatar}
+                            disabled={!selectedImage || !selectedStyle}
+                            className="w-full bg-purple-500 text-white py-3 rounded-lg font-medium hover:bg-purple-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            Generate Historical Avatar
+                        </button>
 
                         {selectedStyle && (
                             <motion.div
