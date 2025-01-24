@@ -1,0 +1,65 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "During which time period did the Vedic Age occur?",
+            "options": [
+                "1500 BCE - 500 BCE",
+                "600 BCE - 300 BCE",
+                "322 BCE - 185 BCE",
+                "320 CE - 550 CE"
+            ],
+            "correctAnswer": "1500 BCE - 500 BCE"
+        },
+        {
+            "id": 2,
+            "question": "Which location was central to the Vedic Age?",
+            "options": ["India", "Persia", "China", "Mesopotamia"],
+            "correctAnswer": "India"
+        },
+        {
+            "id": 3,
+            "question": "What marked the transition from the early to late Vedic period?",
+            "options": [
+                "The composition of the Vedas",
+                "Expansion into the Ganges Plain",
+                "The rise of the Mauryan Empire",
+                "The decline of Buddhism"
+            ],
+            "correctAnswer": "Expansion into the Ganges Plain"
+        },
+        {
+            "id": 4,
+            "question": "Which period is known as the Golden Age of India?",
+            "options": [
+                "Gupta Empire",
+                "Maurya Empire",
+                "Delhi Sultanate",
+                "British Raj"
+            ],
+            "correctAnswer": "Gupta Empire"
+        },
+        {
+            "id": 5,
+            "question": "Who was the founder of the Maurya Empire?",
+            "options": [
+                "Chandragupta Maurya",
+                "Ashoka",
+                "Samudragupta",
+                "Babur"
+            ],
+            "correctAnswer": "Chandragupta Maurya"
+        },
+        {
+            "id": 6,
+            "question": "What was a significant contribution of the Gupta Empire?",
+            "options": [
+                "The Taj Mahal",
+                "Advancements in astronomy and mathematics",
+                "The Kalinga War",
+                "Introduction of railways"
+            ],
+            "correctAnswer": "Advancements in astronomy and mathematics"
+        }
+    ]
+}

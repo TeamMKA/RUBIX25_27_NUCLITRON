@@ -1,0 +1,86 @@
+{
+  "AncientChina": {
+    "time_period": "2100 BCE - 221 BCE",
+    "location": "China",
+    "overview": {
+      "title": "Ancient China",
+      "image_credit": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwm1vTfvp-TbYP4WgXmzRqj0tl4bFJuwgiQg&s",
+      "description": "Ancient China refers to the early dynastic periods that laid the foundation for Chinese civilization, including the Xia, Shang, and Zhou dynasties. This era saw the development of Chinese writing, bronze technology, and the establishment of early political and social structures."
+    },
+    "subsections": [
+      {
+        "title": "Xia Dynasty",
+        "details": "Regarded as the first dynasty in Chinese history, the Xia Dynasty (2100 BCE - 1600 BCE) is considered semi-mythical. Its legacy includes the beginnings of irrigation and flood control systems along the Yellow River."
+      },
+      {
+        "title": "Shang Dynasty",
+        "details": "The Shang Dynasty (1600 BCE - 1046 BCE) is notable for its advances in bronze casting, oracle bone inscriptions (the earliest form of Chinese writing), and the establishment of a centralized political structure."
+      },
+      {
+        "title": "Zhou Dynasty",
+        "details": "The Zhou Dynasty (1046 BCE - 221 BCE) introduced the Mandate of Heaven concept to justify rulers' authority. It saw significant cultural, philosophical, and technological development, including the birth of Confucianism and Daoism during its later period."
+      }
+    ],
+    "video_link": "https://youtu.be/tpy5BMhMYYw?feature=shared"
+  },
+  "QinDynasty": {
+    "time_period": "221 BCE - 206 BCE",
+    "location": "China",
+    "overview": {
+      "title": "Qin Dynasty",
+      "image_credit": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Qin_Unification.png/260px-Qin_Unification.png",
+      "description": "The Qin Dynasty was the first unified empire in Chinese history, established by Qin Shi Huang. It is known for centralizing power, standardizing writing and measurements, and beginning construction of the Great Wall."
+    },
+    "subsections": [
+      {
+        "title": "Unification of China",
+        "details": "Qin Shi Huang unified China after defeating rival states during the Warring States period. He established a centralized autocratic government and standardized currency, weights, and measures."
+      },
+      {
+        "title": "Terracotta Army",
+        "details": "The Terracotta Army, a vast collection of life-sized clay soldiers, horses, and chariots, was built to accompany Qin Shi Huang in the afterlife. It is one of the most significant archaeological discoveries in China."
+      },
+      {
+        "title": "Legalism",
+        "details": "The Qin Dynasty adopted Legalism, a strict political philosophy that emphasized law enforcement and harsh punishments to maintain order. This contributed to its centralized power but also to its eventual downfall due to widespread dissent."
+      }
+    ],
+    "video_link": "https://youtu.be/dkugzgrLU78?feature=shared"
+  },
+  "ModernChina": {
+    "time_period": "1911 CE - Present",
+    "location": "China",
+    "overview": {
+      "title": "Modern China",
+      "image_credit": "https://upload.wikimedia.org/wikipedia/commons/0/04/Xi_Jinping_%28November_2024%29_02.jpg",
+      "description": "Modern China encompasses a time of profound transformation, from the fall of the Qing Dynasty to the rise of the People's Republic of China in 1949. It includes key global events such as World Wars I and II and the Chinese Civil War."
+    },
+    "subsections": [
+      {
+        "title": "Fall of the Qing Dynasty",
+        "details": "The Qing Dynasty fell in 1911, leading to the establishment of the Republic of China under Sun Yat-sen. This period saw efforts to modernize and unify a fragmented nation."
+      },
+      {
+        "title": "World War I (1914 - 1918)",
+        "details": "China joined the Allied Powers in World War I, providing laborers to the war effort. Despite their contribution, the Treaty of Versailles transferred German-held Chinese territories to Japan, sparking the May Fourth Movement."
+      },
+      {
+        "title": "World War II (1939 - 1945)",
+        "details": "China played a major role in World War II, resisting Japanese invasion starting in 1937 (Second Sino-Japanese War). This struggle united China's factions temporarily and devastated the nation with immense civilian casualties."
+      },
+      {
+        "title": "Founding of the People's Republic of China",
+        "details": "In 1949, after years of civil war between the Nationalists and Communists, Mao Zedong proclaimed the founding of the People's Republic of China. This marked the beginning of communist rule in China."
+      },
+      {
+        "title": "Economic Reforms and Opening-Up",
+        "details": "In 1978, under Deng Xiaoping's leadership, China introduced market reforms and opened up to foreign investment, transforming its economy into one of the largest in the world."
+      },
+      {
+        "title": "21st Century Innovations",
+        "details": "Modern China is a global leader in technology, renewable energy, and infrastructure. It has made significant advances in AI, space exploration, and high-speed rail."
+      }
+    ],
+    "video_link": "https://youtu.be/KfgNT4tqJCw?feature=shared"
+  }
+}

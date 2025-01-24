@@ -1,0 +1,46 @@
+{
+    "events": [
+        {
+            "id": 1,
+            "title": "Vedic Period",
+            "description": "A transformative era in ancient India that laid the foundation for Hindu traditions, including the composition of the Vedas.",
+            "year": "-5000",
+            "imageUrl": "https://notes.saralupsc.com/wp-content/uploads/2024/04/image-120.png"
+        },
+        {
+            "id": 2,
+            "title": "Rise of Vaishnavism",
+            "description": "The development of Vaishnavism, a major Hindu denomination, incorporating regional traditions and the idea of Vishnu as the supreme god.",
+            "year": "-600",
+            "imageUrl": "https://i0.wp.com/www.jiva.org/wp-content/uploads/2016/08/NVHistorical-003.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Maurya Empire Founded",
+            "description": "Chandragupta Maurya establishes the Maurya Empire, leading to one of the largest empires in Indian history.",
+            "year": "322",
+            "imageUrl": "https://www.cheggindia.com/wp-content/uploads/2024/06/Mauryan-Empire-under-Chandragupta-Maurya-1-865x1024.png.webp"
+        },
+        {
+            "id": 4,
+            "title": "Golden Age of Gupta Empire",
+            "description": "The Gupta Empire sees a cultural and scientific flourishing, marking the Golden Age of India.",
+            "year": "550",
+            "imageUrl": "https://smarthistory.org/wp-content/uploads/2020/03/ChandraguptaIIOnHorse.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Mughal Empire Founded",
+            "description": "Babur establishes the Mughal Empire, which grows to be one of the largest and most prosperous in Indian history.",
+            "year": "1526",
+            "imageUrl": "https://ichef.bbci.co.uk/images/ic/1200xn/p0dwp7c6.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Independence and Partition",
+            "description": "India gains independence from British rule in 1947, but is divided into two countries, India and Pakistan, leading to significant challenges.",
+            "year": "1947",
+            "imageUrl": "https://www.financialexpress.com/wp-content/uploads/2024/08/Godrej-2024-08-12T165938.465.png?w=1024"
+        }
+    ]
+}

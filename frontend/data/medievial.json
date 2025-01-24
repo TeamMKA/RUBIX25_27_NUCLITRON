@@ -1,0 +1,29 @@
+{
+  "MedievalPeriod": [
+    {
+      "link": "https://example.com",
+      "title": "Delhi Sultanate begins",
+      "image_src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Sultan_Osman.jpg/1200px-Sultan_Osman.jpg"
+    },
+    {
+      "link": "https://example.com",
+      "title": "Dravidian Folk Religion",
+      "image_src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Kuttull_Minor%2C_Delhi._The_Qutb_Minar%2C_an_aquatint_by_Thomas_Daniell%2C_1805.jpg/1200px-Kuttull_Minor%2C_Delhi._The_Qutb_Minar%2C_an_aquatint_by_Thomas_Daniell%2C_1805.jpg"
+    },
+    {
+      "link": "example.com",
+      "image_src": "https://i.pinimg.com/1200x/88/b4/7c/88b47cdc7dcde91b015c8baa95198f81.jpg",
+      "title": "Mongol conquest of Kashmir"
+    },
+    {
+      "link": "example.com",
+      "image_src": "https://i.pinimg.com/1200x/5f/18/5d/5f185d9e03c72a328a5be693aea47c48.jpg",
+      "title": "Khalji dynasty"
+    },
+        {
+      "link": "example.com",
+      "image_src": "https://i.pinimg.com/1200x/3e/58/76/3e587669a71f5a5da3d6d122b2335561.jpg",
+      "title": "Battle of Amroha"
+    }
+  ]
+}
