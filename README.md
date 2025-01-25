@@ -4,32 +4,30 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/1.png" alt="project-screenshot" width="400" height="400/">
+<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/1.png" alt="project-screenshot" />
 
-<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/2.png" alt="project-screenshot" width="400" height="400/">
+<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/2.png" alt="project-screenshot" />
 
-<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/3.png" alt="project-screenshot" width="400" height="400/">
+<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/3.png" alt="project-screenshot" />
 
-<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/4.png" alt="project-screenshot" width="400" height="400/">
+<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/4.png" alt="project-screenshot" />
 
-<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/5.png" alt="project-screenshot" width="400" height="400/">
+<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/5.png" alt="project-screenshot" />
 
-<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/6.png" alt="project-screenshot" width="400" height="400/">
+<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/6.png" alt="project-screenshot" />
 
-<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/7.png" alt="project-screenshot" width="400" height="400/">
+<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/7.png" alt="project-screenshot" />
 
-<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/8.png" alt="project-screenshot" width="400" height="400/">
+<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/8.png" alt="project-screenshot" />
 
-<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/9.png" alt="project-screenshot" width="400" height="400/">
+<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/9.png" alt="project-screenshot" />
 
-<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/10.png" alt="project-screenshot" width="400" height="400/">
+<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/10.png" alt="project-screenshot" />
 
-<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/11.png" alt="project-screenshot" width="400" height="400/">
+<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/11.png" alt="project-screenshot" />
 
-<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/12.png" alt="project-screenshot" width="400" height="400/">
-
+<img src="https://raw.githubusercontent.com/TeamMKA/RUBIX25_27_NUCLITRON/refs/heads/rya/assets/12.png" alt="project-screenshot" />
 <h2>🧐 Features</h2>
-
 Here're some of the project's best features:
 
 -   Interactive Timeline Navigation : Zoomable timelines with key events civilizations and innovations. Event previews with summaries and quick-access multimedia links.
