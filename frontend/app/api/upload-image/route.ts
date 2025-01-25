@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
 
         // Return the secure URL and public_id
         return NextResponse.json({
-            url: (uploadResponse as any).secure_url,
+            url: (uploadResponse).secure_url,
             public_id: (uploadResponse as any).public_id, // Return public_id for later use
         });
     } catch (error) {

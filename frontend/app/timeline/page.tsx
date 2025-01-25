@@ -5,7 +5,7 @@ import { TextureBackground } from '@/components/texture-background';
 
 // Import the data from the data.js file
 import { timelineData } from '@/assets/data'; // Adjust the path according to your folder structure
-import ChatBot from '@/components/ChatBot';
+// import ChatBot from '@/components/ChatBot';
 
 export default function TimelineDemo() {
     return (

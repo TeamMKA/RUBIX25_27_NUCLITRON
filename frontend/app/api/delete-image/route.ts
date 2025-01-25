@@ -14,9 +14,20 @@ export async function DELETE(req: NextRequest) {
 
         // Delete image from Cloudinary
         const deleteResponse = await new Promise((resolve, reject) => {
+            interface DeleteResponse {
+                result: string;
+            }
+
+            interface DeleteError {
+                message: string;
+            }
+
             cloudinary.uploader.destroy(
                 public_id,
-                (error: any, result: unknown) => {
+                (
+                    error: DeleteError | null,
+                    result: DeleteResponse | unknown
+                ) => {
                     if (error) reject(error);
                     else resolve(result);
                 }

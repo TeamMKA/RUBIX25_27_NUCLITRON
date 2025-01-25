@@ -51,13 +51,13 @@ export default function QuizPage() {
         }
     };
 
-    const handleLogout = async () => {
-        try {
-            await signOut(auth);
-        } catch (error) {
-            console.error('Error signing out:', error);
-        }
-    };
+    // const handleLogout = async () => {
+    //     try {
+    //         await signOut(auth);
+    //     } catch (error) {
+    //         console.error('Error signing out:', error);
+    //     }
+    // };
 
     const handleAnswerSubmit = async () => {
         const currentQuestionData = questions.questions[currentQuestion];
