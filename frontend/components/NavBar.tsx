@@ -36,12 +36,12 @@ const NavBar = () => {
                         <HoveredLink href="/">Start</HoveredLink>
                         <HoveredLink href="/#features">Features</HoveredLink>
                         <HoveredLink href="/#quote">Quote</HoveredLink>
-                        <HoveredLink href="/#footer">About Us</HoveredLink>
+                        <HoveredLink href="/explore">Explore</HoveredLink>
                     </div>
                 </MenuItem>
                 <MenuItem setActive={setActive} active={active} item="Products">
                     <div className="flex flex-col space-y-4 text-sm">
-                        <HoveredLink href="/explore">Explore</HoveredLink>
+                        {/* <HoveredLink href="/explore">Explore</HoveredLink> */}
                         <HoveredLink href="/timeline">Time Line</HoveredLink>
                         <HoveredLink href="/map">Maps</HoveredLink>
                         <HoveredLink href="/explore/#whatif">
@@ -49,6 +49,9 @@ const NavBar = () => {
                         </HoveredLink>
                         <HoveredLink href="/chat">
                             Chat with Key Figures
+                        </HoveredLink>
+                        <HoveredLink href = "/image-gen" >
+                            Historical Image Generator
                         </HoveredLink>
                     </div>
                 </MenuItem>

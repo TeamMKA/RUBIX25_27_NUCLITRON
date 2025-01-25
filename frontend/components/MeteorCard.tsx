@@ -1,8 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+"use client"
 import React from 'react';
 import { Meteors } from './ui/meteors';
+import Link from 'next/link';
 
 const MeteorCard = ({title, description, handleChange} : {title: string, description: string, handleChange?: () => void  }) => {
+  const handleClick = () => {
+    window.open('https://discord.gg/bhFw7CPA', '_blank');
+  }
+
   return (
     <div className="w-full h-[300px] relative">
       <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-2xl blur-3xl" />
@@ -26,9 +32,11 @@ const MeteorCard = ({title, description, handleChange} : {title: string, descrip
           <p className="font-normal text-sm text-slate-200 mb-4 relative z-50">{description}</p>
         </div>
 
-        <button className="border px-4 py-1 rounded-lg border-gray-500 text-gray-300 text-sm mt-4 hover:bg-gray-800 transition-colors">
-          Learn More
+        
+        <button className="border px-4 py-1 rounded-lg border-gray-500 text-gray-300 text-sm mt-4 hover:bg-gray-800 transition-colors" onClick={handleClick}>
+          Community
         </button>
+        
 
         <Meteors number={20} />
       </div>

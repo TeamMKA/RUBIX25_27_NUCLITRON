@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { useState, useRef, useCallback } from 'react';
@@ -10,6 +11,7 @@ import {
     Shield,
     Sword,
     Download,
+    Share,
     Image as ImageIcon,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -65,6 +67,48 @@ export default function HistoryAvatar() {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const styleInputRef = useRef<HTMLInputElement>(null);
 
+    const shareAvatar = async () => {
+        if (!generatedAvatar) return;
+
+        // Prepare share data
+        const shareData = {
+            title: 'My Historical Avatar',
+            text: 'Check out my amazing historical avatar!',
+            url: generatedAvatar,
+        };
+
+        // Try Web Share API first
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+                console.log('Avatar shared successfully');
+                return;
+            } catch (error) {
+                console.error('Error sharing:', error);
+            }
+        }
+
+        // Fallback sharing methods for specific platforms
+        const fallbackShare = (platform: string) => {
+            let shareUrl = '';
+            switch (platform) {
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                        shareData.text
+                    )}&url=${encodeURIComponent(shareData.url)}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                        shareData.url
+                    )}`;
+                    break;
+            }
+            window.open(shareUrl, '_blank');
+        };
+
+        // If Web Share API is not supported, use fallback methods
+        fallbackShare('twitter');
+    };
     const uploadImageToServer = async (selectedImage: string) => {
         try {
             const response = await fetch('/api/upload-image', {
@@ -398,6 +442,13 @@ export default function HistoryAvatar() {
                                             alt="Generated Avatar"
                                             className="w-full h-full object-cover"
                                         />
+                                        <button
+                                            className="absolute bottom-4 left-4 bg-purple-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-purple-600"
+                                            onClick={shareAvatar}
+                                        >
+                                            <Share className="w-4 h-4" />
+                                            Share
+                                        </button>
                                         <button
                                             onClick={handleDownload}
                                             className="absolute bottom-4 right-4 bg-purple-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-purple-600"
