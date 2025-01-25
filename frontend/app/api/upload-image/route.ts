@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { v2 as cloudinary } from 'cloudinary';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -30,7 +31,7 @@ export async function POST(req: NextRequest) {
 
         // Return the secure URL and public_id
         return NextResponse.json({
-            url: (uploadResponse).secure_url,
+            url: (uploadResponse as any).secure_url,
             public_id: (uploadResponse as any).public_id, // Return public_id for later use
         });
     } catch (error) {

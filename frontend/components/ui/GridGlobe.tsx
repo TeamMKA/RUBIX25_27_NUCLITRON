@@ -9,10 +9,6 @@ const World = dynamic(() => import("../ui/Globe").then((m) => m.World), {
 
 export function GridGlobe() {
 
-  const handleClick = () => {
-   alert("Clicked on the Globe");
-  };
-
   const globeConfig = {
     pointSize: 4,
     globeColor: "#062056",

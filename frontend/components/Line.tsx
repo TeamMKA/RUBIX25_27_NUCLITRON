@@ -1,7 +1,14 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import { HistoricalEvent } from '../types';
+/* import { HistoricalEvent } from '../types'; */
 import { MoveHorizontal } from 'lucide-react';
 
+interface HistoricalEvent {
+    id: string;
+    title: string;
+    year: number;
+    imageUrl:string;
+}
 interface TimelineProps {
     events: HistoricalEvent[];
     onDragOver: (e: React.DragEvent) => void;

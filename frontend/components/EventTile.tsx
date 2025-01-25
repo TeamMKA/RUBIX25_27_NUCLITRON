@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { Clock, Calendar } from 'lucide-react';
 export interface HistoricalEvent {

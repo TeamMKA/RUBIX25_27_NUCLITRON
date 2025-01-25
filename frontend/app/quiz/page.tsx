@@ -10,7 +10,6 @@ import questions from '@/data/quiz-question.json';
 import { db, auth, googleProvider } from '@/lib/firebase';
 import {
     signInWithPopup,
-    signOut,
     onAuthStateChanged,
     User,
 } from 'firebase/auth';
